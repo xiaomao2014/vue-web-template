@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import NProgress from 'nprogress'
+import NProgress from 'nprogress' // 进度条
 import Home from '@/views/Home.vue'
 
 Vue.use(Router)
@@ -31,14 +31,19 @@ router.addRoutes([
     path: '/about',
     name: 'about',
     component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+  },
+  {
+    path: '/renTest',
+    name: 'renTest',
+    component: () => import(/* webpackChunkName: "renTest" */ '@/views/renTest.vue')
   }
 ])
 router.beforeEach((to, from, next) => {
-  NProgress.start()
+  NProgress.start() // 进度条开始
   next()
 })
 router.afterEach((to, from) => {
-  NProgress.done()
+  NProgress.done() // 进度条结束
 })
 
 export default router

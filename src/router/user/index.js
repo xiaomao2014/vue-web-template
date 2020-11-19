@@ -14,7 +14,8 @@ export default [
       {
         path: 'edit',
         name: 'user-edit',
-        component: () => import('@/views/user/edit')
+        component: () => import('@/views/user/edit'),
+        meta: { title: '编辑列表' }
       }
     ]
   }
